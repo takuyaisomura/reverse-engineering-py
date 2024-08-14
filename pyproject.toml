@@ -1,0 +1,31 @@
+[project]
+name = "reverse_engineering"
+version = "0.1.0"
+dependencies = ["numpy", "scipy", "matplotlib", "tqdm"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [
+    "reverse_engineering",
+    "reverse_engineering.utils",
+    "reverse_engineering.example",
+    "reverse_engineering.example.bss",
+    "reverse_engineering.example.invitro_bss",
+    "reverse_engineering.example.maze",
+]
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+disable_error_code = ["import-untyped"]
