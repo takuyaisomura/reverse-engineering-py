@@ -11,14 +11,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = [
-    "reverse_engineering",
-    "reverse_engineering.utils",
-    "reverse_engineering.example",
-    "reverse_engineering.example.bss",
-    "reverse_engineering.example.invitro_bss",
-    "reverse_engineering.example.maze",
-]
+packages = ["reverse_engineering", "reverse_engineering.utils"]
 
 [tool.black]
 line-length = 120

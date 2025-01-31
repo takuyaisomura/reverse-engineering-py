@@ -48,7 +48,7 @@ def simulate(
     for o_t in o:
         qs = pomdp.infer(o_t)
         qs_history.append(qs)
-        pomdp.learn(o_t, qs)
+        pomdp.learn()
         pomdp.reset_buffer()
     return np.array(qs_history)  # (T, Ns * 2)
 

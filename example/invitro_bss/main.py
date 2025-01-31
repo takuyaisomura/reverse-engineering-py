@@ -12,14 +12,10 @@ from reverse_engineering.analysis import (
     normalize_responses,
     predict_from_initial_responses,
 )
-from reverse_engineering.example.invitro_bss.load_data import (
-    get_data,
-    get_data_const,
-    get_ideal_likelihood_mapping,
-    load_data,
-)
-from reverse_engineering.example.invitro_bss.plot_summary_figure import plot_summary_figure
-from reverse_engineering.example.invitro_bss.plot_weights_trajectory import plot_weights_trajectory
+
+from .load_data import get_data, get_data_const, get_ideal_likelihood_mapping, load_data
+from .plot_summary_figure import plot_summary_figure
+from .plot_weights_trajectory import plot_weights_trajectory
 
 Npost = 10  # number of "post" sessions for statistics
 lambda_ = 3000  # prior strength (insensitivity to plasticity)

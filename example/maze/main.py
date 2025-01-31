@@ -3,9 +3,10 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from reverse_engineering.example.maze.plot import plot
-from reverse_engineering.example.maze.utils import create_maze, qd_matrix
 from reverse_engineering.pomdp import POMDP
+
+from .plot import plot
+from .utils import create_maze, qd_matrix
 
 size_x = 99  # length of maze (should be odd)
 size_y = 19  # width of maze (should be odd)
