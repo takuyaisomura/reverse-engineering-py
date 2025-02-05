@@ -24,7 +24,7 @@ Nd = n_decisions**n_decision_steps  # dimensionality of decisions
 sim_type = 2
 
 risk_chunk_size = 200
-delta_thresholds = [-10, 0, 10]
+delta_thresholds = [-10.0, 0.0, 10.0]
 risk_values = [0.55, 0.55, 0.45, 0]
 
 E_right = 0.25  # prior of selecting rightward motion
@@ -108,8 +108,8 @@ def main(
 def run_trial(
     pomdp: POMDP,
     maze: np.ndarray,
-    T: int | None = 10000,
-    n_intvl: int | None = 2000,
+    T: int = 10000,
+    n_intvl: int = 2000,
     plot_fn=None,
 ) -> tuple[POMDP, int, float, np.ndarray, np.ndarray]:
     # position (y, x) of the agent on the maze; 0-indexed

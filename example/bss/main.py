@@ -167,7 +167,7 @@ def plot_state(
             alpha=0.2,
             color=color,
         )
-        plt.axis([0, Nsession, -0.2, 0.2])
+        plt.axis((0, Nsession, -0.2, 0.2))
         plt.xlabel("Session #")
         plt.ylabel(r"Change in posterior $\mathbf{s}^{(1)}$")  # 1-indexed
         plt.xticks([0, Nsession // 2, Nsession])
