@@ -5,8 +5,9 @@ import numpy as np
 
 from reverse_engineering.pomdp import POMDP
 
-from .plot import plot
-from .utils import create_maze, qd_matrix
+from plot import plot  # isort: skip
+from utils import create_maze, qd_matrix  # isort: skip
+
 
 size_x = 99  # length of maze (should be odd)
 size_y = 19  # width of maze (should be odd)

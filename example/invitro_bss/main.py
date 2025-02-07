@@ -13,9 +13,9 @@ from reverse_engineering.analysis import (
     predict_from_initial_responses,
 )
 
-from .load_data import get_data, get_data_const, get_ideal_likelihood_mapping, load_data
-from .plot_summary_figure import plot_summary_figure
-from .plot_weights_trajectory import plot_weights_trajectory
+from load_data import get_data, get_data_const, get_ideal_likelihood_mapping, load_data  # isort: skip
+from plot_summary_figure import plot_summary_figure  # isort: skip
+from plot_weights_trajectory import plot_weights_trajectory  # isort: skip
 
 Npost = 10  # number of "post" sessions for statistics
 lambda_ = 3000  # prior strength (insensitivity to plasticity)
@@ -181,14 +181,6 @@ def analyze_sample(
         phi0,
         L,
     )
-
-
-if __name__ == "__main__":
-    main()
-
-
-if __name__ == "__main__":
-    main()
 
 
 if __name__ == "__main__":
