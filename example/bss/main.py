@@ -96,8 +96,9 @@ def create_qa_init(
     qa_amp_min: float,
     qa_amp_max: float,
 ) -> np.ndarray:
-    # Initial connection strengths (prior beliefs about parameters)
-    qa_init = np.zeros((No * 2, Ns * 2))  # parameter prior or initial synaptic strengths
+    qa_init = np.zeros((No * 2, Ns * 2))
+
+    # initialize values
     for i in range(No // 2):
         qa_init[i, :] = [
             0.5 + qa_eps * 2,
@@ -114,6 +115,7 @@ def create_qa_init(
         ]
     qa_init[No:, :] = 1 - qa_init[:No, :]
 
+    # randomize amplitudes
     for i in range(No):
         for j in range(Ns):
             amp = qa_amp_min + (qa_amp_max - qa_amp_min) * np.random.rand()
