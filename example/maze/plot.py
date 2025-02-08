@@ -105,8 +105,8 @@ def plot(
     ax.axis("off")
 
     # bottom row
-    view_extent = [-size_view / 2, size_view / 2, -size_view / 2, size_view / 2]
-    view_ticks = [np.ceil(-size_view / 2).astype(int), 0, np.floor(size_view / 2).astype(int)]
+    view_extent = (-size_view / 2, size_view / 2, -size_view / 2, size_view / 2)
+    view_ticks = (np.ceil(-size_view / 2).astype(int), 0, np.floor(size_view / 2).astype(int))
 
     # observation
     ax = fig.add_subplot(gs[1, 0])
@@ -139,7 +139,7 @@ def plot(
     ax = fig.add_subplot(gs[1, 3])
     ax.plot(np.arange(1, t + 1), pos[1, :t] + 1, "b-")  # 1-indexed
     ax.ticklabel_format(style="sci", axis="both", scilimits=(-3, 3), useMathText=True)
-    ax.axis([0, T, 0, size_x + 1])
+    ax.axis((0, T, 0, size_x + 1))
     ax.set_xticks([0, T // 2, T])
     ax.set_yticks([0, (size_x + 1) // 2, size_x + 1])
     ax.set_xlabel("Time")
@@ -150,7 +150,7 @@ def plot(
     times = np.concatenate([trial_time_history, np.full(n_trial - idx_trial, np.nan)])
     ax.plot(np.arange(1, n_trial + 1), times, "bo", fillstyle="none")
     ax.ticklabel_format(style="sci", axis="both", scilimits=(-3, 3), useMathText=True)
-    ax.axis([1, n_trial, 0, T])
+    ax.axis((1, n_trial, 0, T))
     ax.set_xticks([0, n_trial // 2, n_trial])
     ax.set_yticks([0, T // 2, T])
     ax.set_xlabel("Trial")
