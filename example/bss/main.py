@@ -135,29 +135,25 @@ def plot_state(
     # s_history: (Nsample, T, Ns * 2)
     # qs_history: (Nsample, T, Ns * 2)
 
-    # compute conditional mean of qs for each session
+    # Calculate conditional means of qs for each session and state
     qs_sess_mean = np.empty((Nsample, Nsession, Ns, 2))
 
     s_reshaped = s_history.reshape(Nsample, Nsession, session_len, Ns * 2)
     qs_reshaped = qs_history.reshape(Nsample, Nsession, session_len, Ns * 2)
-    for i in range(2):  # s_i = 1 (i = 0), 0 (i = 1)
-        # mask that indicates whether s^(k) == s_i
+    for i in range(2):  # i-th state
+        # Create mask for current state
         mask = s_reshaped[:, :, :, i * Ns : (i + 1) * Ns]  # (Nsample, Nsession, session_len, Ns)
-        # extract qs^(k) at time s^(k) == s_i for each k
-        qs_masked = np.where(mask, qs_reshaped[:, :, :, :Ns], np.nan)  # (Nsample, Nsession, session_len, Ns)
-        # session means of qs^(k) at time s^(k) == s_i for each k
+        # Extract qs for current state; set non-matching states to nan
+        qs_masked = np.where(mask, qs_reshaped[:, :, :, :Ns], np.nan)
+        # Calculate mean qs for current state in each session
         qs_sess_mean[:, :, :, i] = np.nanmean(qs_masked, axis=2)  # (Nsample, Nsession, Ns)
 
     # plot qs^(0)
-    # select qs^(0)
-    qs0_sess_mean = qs_sess_mean[:, :, 0, :]  # (Nsample, Nsession, 2)
-    # subtract the first session
-    qs0_sess_mean -= qs0_sess_mean[:, 0:1, :]
-    # subtract state mean
-    qs0_sess_mean -= qs0_sess_mean.mean(axis=2, keepdims=True)
-    # sample mean and std
-    qs0_mean = qs0_sess_mean.mean(axis=0)  # (Nsession, 2)
-    qs0_std = qs0_sess_mean.std(axis=0, ddof=1)
+    qs0_sess_mean = qs_sess_mean[:, :, 0, :]  # select qs^(0): (Nsample, Nsession, 2)
+    qs0_sess_mean -= qs0_sess_mean[:, 0:1, :]  # subtract the first session
+    qs0_sess_mean -= qs0_sess_mean.mean(axis=2, keepdims=True)  # subtract state mean
+    qs0_mean = qs0_sess_mean.mean(axis=0)  # sample mean (Nsession, 2)
+    qs0_std = qs0_sess_mean.std(axis=0, ddof=1)  # sample std (Nsession, 2)
 
     sess = np.arange(Nsession)
     for i, color in enumerate(["r", "b"]):  # s^(0) = s_i
