@@ -12,6 +12,38 @@ plt.rcParams.update(
 )
 
 
+def qd_matrix(
+    qd,
+    directions,
+    n_decision_steps,
+    size_view,
+):
+    """Visualize decision probabilities in matrix form.
+    qd (Nd,): decision probabilities
+    directions (np.ndarray): (n_decisions, 2)
+    n_decision_steps (int): how many steps ahead to make decisions
+    size_view (int): size of the view
+    """
+    n_decisions = len(directions)
+    Nd = n_decisions**n_decision_steps
+    assert len(qd) == Nd
+
+    qd_mat = np.zeros((size_view, size_view))
+
+    # Convert each linear index of qd to n_decision_steps-dimensional index
+    # Then, combine them to (n_decision_steps, Nd)
+    indices = np.array(np.unravel_index(np.arange(Nd), (n_decisions,) * n_decision_steps))  # (n_decision_steps, Nd)
+    # sum the moves at all decision steps
+    total_moves = directions[indices].sum(axis=0)  # (n_decision_steps, Nd, 2) -> (Nd, 2)
+    # convert to the center-based coordinates
+    pos = total_moves + (size_view + 1) // 2 - 1
+
+    # return the maximum probability at each position
+    np.maximum.at(qd_mat, (pos[:, 0], pos[:, 1]), qd)
+
+    return qd_mat
+
+
 def plot(
     fig: plt.Figure,
     maze: np.ndarray,  # (size_y, size_x)
