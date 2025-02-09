@@ -13,8 +13,8 @@ plt.rcParams.update(
 
 def plot_summary_figure(
     fig: plt.Figure,
-    datatype: str,
     fig_pos: int,
+    datatype: str,
     x1_list: np.ndarray,  # (n_samp, Nsession, Nx)
     x_xp_mean: np.ndarray,  # (n_bins,)
     x_xp_std: np.ndarray,  # (n_bins,)
@@ -59,7 +59,7 @@ def plot_summary_figure(
     ax.set_title(f"Data: {datatype}\nSource-1 ensemble response")
     ax.set_xlabel("Session")
     ax.set_ylabel("Response")
-    ax.axis([0, Nsession, 0, 1])
+    ax.axis((0, Nsession, 0, 1))
     ax.set_xticks(sess_ticks)
     ax.set_yticks(resp_ticks)
     ax.spines["right"].set_visible(False)
@@ -83,7 +83,7 @@ def plot_summary_figure(
     ax.set_title("Response prediction (sess 91-100)")
     ax.set_xlabel("$x$")
     ax.set_ylabel("$x^P$")
-    ax.axis([0, 1, 0, 1])
+    ax.axis((0, 1, 0, 1))
     ax.set_xticks(resp_ticks)
     ax.set_yticks(resp_ticks)
     ax.spines["right"].set_visible(False)
@@ -105,7 +105,7 @@ def plot_summary_figure(
     ax.set_title("Response prediction error")
     ax.set_xlabel("Session")
     ax.set_ylabel("Error")
-    ax.axis([0, Nsession, 0, 0.5])
+    ax.axis((0, Nsession, 0, 0.5))
     ax.set_xticks(sess_ticks)
     ax.set_yticks([0, 0.2, 0.4])
     ax.spines["right"].set_visible(False)
@@ -118,7 +118,7 @@ def plot_summary_figure(
     ax.set_title("Weight prediction (sess 100)")
     ax.set_xlabel("$W$")
     ax.set_ylabel("$W^P$")
-    ax.axis([-1, 4, -1, 4])
+    ax.axis((-1, 4, -1, 4))
     ax.set_xticks([0, 2, 4])
     ax.set_yticks([0, 2, 4])
 
@@ -150,7 +150,7 @@ def plot_summary_figure(
     ax.set_title(r"Weight prediction error")
     ax.set_xlabel("Session")
     ax.set_ylabel("Error")
-    ax.axis([0, Nsession, 0, 0.3])
+    ax.axis((0, Nsession, 0, 0.3))
     ax.set_xticks(sess_ticks)
     ax.set_yticks([0, 0.1, 0.2, 0.3])
     ax.spines["right"].set_visible(False)
@@ -174,7 +174,7 @@ def plot_summary_figure(
     ax.set_title("Free energy")
     ax.set_xlabel("Session")
     ax.set_ylabel("$F$")
-    ax.axis([0, Nsession, 10000, 12000])
+    ax.axis((0, Nsession, 10000, 12000))
     ax.set_xticks(sess_ticks)
     ax.set_yticks([1e4, 1.1e4, 1.2e4])
     ax.spines["right"].set_visible(False)

@@ -28,9 +28,9 @@ def normalize_responses(
     g1 = np.where(((r_.mean(axis=0) > 1) & (r_.min(axis=0) > 0.1) & ((r_s_10 - r_s_01).mean(axis=0) > 0.5)))[0]
     g2 = np.where(((r_.mean(axis=0) > 1) & (r_.min(axis=0) > 0.1) & ((r_s_10 - r_s_01).mean(axis=0) < -0.5)))[0]
     if len(g1) == 1:
-        g1 = [g1[0], g1[0]]
+        g1 = np.array([g1[0], g1[0]])
     if len(g2) == 1:
-        g2 = [g2[0], g2[0]]
+        g2 = np.array([g2[0], g2[0]])
 
     # compute ensemble responses (Nx, Nsession * session_len)
     x = np.vstack((r[g1, :].mean(axis=0), r[g2, :].mean(axis=0)))
