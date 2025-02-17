@@ -44,7 +44,7 @@ class SampleResults:
 
 @dataclass
 class DatasetResults:
-    """Analysis results for a single datatype"""
+    """Analysis results for a dataset of a single datatype"""
 
     x1_list: np.ndarray  # response of source 1-preferring ensemble (n_samp, Nsession, Nx)
     x_post: np.ndarray  # observed responses in last 10 sessions (n_samp, Nx, session_len * Npost)
@@ -64,7 +64,7 @@ def main(out_dir: Path | str | None = None) -> None:
 
     # Analyze and visualize each dataset condition
     for i, dataset in enumerate(get_datasets()):
-        print(f"{dataset.datatype} condition")
+        print(f"Analyzing {dataset.datatype} condition...")
         analysis_results, sample_results = analyze_dataset(dataset)
 
         fig_pos = i + 1  # 1-indexed
@@ -157,16 +157,17 @@ def visualize_dataset(
     )
 
     if show_video:
+        line_width = 6 if datatype == "mix0" else 3
         plot_weights_trajectory(
+            sample_results.W,
+            sample_results.Wp,
+            sample_results.o,
+            sample_results.phi1,
+            sample_results.phi0,
             out_dir,
+            datatype,
             Ninit,
-            o=sample_results.o,
-            W=sample_results.W,
-            Wp=sample_results.Wp,
-            phi1=sample_results.phi1,
-            phi0=sample_results.phi0,
-            data_name=datatype,
-            line_width=6 if datatype == "mix0" else 3,
+            line_width=line_width,
         )
 
 
