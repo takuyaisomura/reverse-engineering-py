@@ -131,6 +131,7 @@ def plot_empirical_weights_trajectory(
     anim = FuncAnimation(fig, update_plot_empirical, frames=Nsession, interval=1, blit=True, repeat=False)
     anim.save(out_dir / f"free_energy_gradient_W_{condition_name}.mp4", writer="ffmpeg", fps=fps, dpi=dpi)
     fig.savefig(out_dir / f"free_energy_gradient_W_{condition_name}.png")
+    plt.close(fig)
 
 
 def plot_predicted_weights_trajectory(
@@ -182,6 +183,7 @@ def plot_predicted_weights_trajectory(
         dpi=dpi,
     )
     fig.savefig(out_dir / f"free_energy_gradient_Wp_{condition_name}.png")
+    plt.close(fig)
 
 
 def plot_weights_trajectory(
