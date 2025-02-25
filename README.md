@@ -60,12 +60,12 @@ python -m venv venv
 source venv/bin/activate  # On Windows, use venv\Scripts\activate.ps1 or activate.bat
 ```
 2. Install:
-- Option 1: Install from PyPI
+- Option 1: Install from PyPI (core library only, without examples)
 ```bash
 pip install reverse-engineering-py
 ```
 
-- Option 2: Clone and install in editable mode (for developers who want to contribute or modify the code):
+- Option 2: Clone the repository (includes examples and full source code)
 ```bash
 git clone https://github.com/takuyaisomura/reverse-engineering-py.git
 cd reverse-engineering-py
@@ -76,57 +76,49 @@ pip install -e .
 This repository contains:
 - Free energy agent class ([pomdp.py](reverse_engineering/pomdp.py))
 - Functions for analyzing invitro neuronal response data ([analysis.py](reverse_engineering/analysis.py))
-- Example code to reproduce main results from each paper ([example/](reverse_engineering/example/))
+- Example code to reproduce main results from each paper ([example/](example/))
 
 ```
 reverse_engineering/
 ├── pomdp.py             # Free energy agent class for simulation
 ├── analysis.py          # Functions for analyzing invitro neuronal response data
-├── example/             # Example code to reproduce main results from each paper
-│   ├── bss/             # Paper 1 (and 3)
-│   │   └── main.py      # Runs blind source separation simulation and outputs figures
-│   ├── maze/            # Paper 2
-│   │   └── main.py      # Runs maze simulation and outputs figures
-│   └── invitro_bss/     # Paper 3
-│       ├── data/        # Neuronal response data
-│       └── main.py      # Analyzes data using analysis.py and outputs figures/videos
 └── utils/
    └── variable_conversion.py  # Functions to convert between NN and Bayesian variables
+
+example/                 # Example code to reproduce main results from each paper
+├── bss/                 # Paper 1 (and 3)
+│   └── main.py          # Runs blind source separation simulation and outputs figures
+├── maze/                # Paper 2
+│   └── main.py          # Runs maze simulation and outputs figures
+└── invitro_bss/         # Paper 3
+    ├── data/            # Neuronal response data
+    └── main.py          # Analyzes data using analysis.py and outputs figures/videos
 ```
 
 ### example/bss
 This example demonstrates blind source separation (BSS) by using the free-energy principle.
 The implementation is based on the [Paper 1](https://doi.org/10.1162/neco_a_01315) and [Paper 3](https://doi.org/10.1038/s41467-023-40141-z).
 ```bash
-python -m reverse_engineering.example.bss.main  # if you installed from PyPI
+python example/bss/main.py
 ```
-```bash
-python reverse_engineering/example/bss/main.py  # if you installed in editable mode
-```
-<img src="reverse_engineering/example/bss/output/bss.png" height="300" alt="example bss output">
+<img src="example/bss/output/bss.png" height="300" alt="example bss output">
 
 ### example/maze
 This example demonstrates maze navigation by using the free-energy principle.
 The implementation is based on the [Paper 2](https://doi.org/10.1038/s42003-021-02994-2).
 ```bash
-python -m reverse_engineering.example.maze.main  # if you installed from PyPI
+python example/maze/main.py
 ```
-```bash
-python reverse_engineering/example/maze/main.py  # if you installed in editable mode
-```
-![example maze output](reverse_engineering/example/maze/output/maze_sample1_trial100_E0.25.png)
+![example maze output](example/maze/output/maze_sample1_trial100_E0.25.png)
 
 ### example/invitro_bss
 This example analyzes data from invitro neuronal networks performing blind source separation (BSS) using the reverse engineering approach.
 The implementation is based on the [Paper 3](https://doi.org/10.1038/s41467-023-40141-z).
 ```bash
-python -m reverse_engineering.example.invitro_bss.main  # if you installed from PyPI
+python example/invitro_bss/main.py
 ```
-```bash
-python reverse_engineering/example/invitro_bss/main.py  # if you installed in editable mode
-```
-<video src="https://github.com/user-attachments/assets/88d4ef4e-8704-44fc-88a3-6cbe187ae5b5" controls muted="false"></video>
-<img src="reverse_engineering/example/invitro_bss/output/fig.png" height="640" alt="example invitro-bss output">
+| <img src="example/invitro_bss/output/fig.png" width="100%" alt="example invitro-bss output"> | <video controls autoplay loop muted src="https://github.com/user-attachments/assets/88d4ef4e-8704-44fc-88a3-6cbe187ae5b5" width="100%"></video> |
+|:---:|:---:|
 
 ## License
 This project is covered under the **GNU General Public License v3.0**.
