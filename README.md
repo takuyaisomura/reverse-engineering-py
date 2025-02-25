@@ -26,28 +26,31 @@ This repository is based on the following papers:
 ## Example Notebooks
 The following Colab notebooks provide explanations and usage examples:
 
-<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <div style="text-align: center; width: 30%;">
-    <a href="https://drive.google.com/file/d/164bR0gO_1qHixJ96uNxvygY7JRdLH1XL/view?usp=sharing">
-      <img src="assets/bss_thumbnail.png" width="100%" alt="BSS Example">
-    </a>
-    <p>Blind Source Separation (Paper 1 & 3)</p>
-  </div>
-  
-  <div style="text-align: center; width: 30%;">
-    <a href="https://drive.google.com/file/d/12S1PHlCTLKTaf33YGWeTjbVxrRh5gWHz/view?usp=sharing">
-      <img src="assets/maze_thumbnail.png" width="100%" alt="Maze Example">
-    </a>
-    <p>Maze Navigation (Paper 2)</p>
-  </div>
-  
-  <div style="text-align: center; width: 30%;">
-    <a href="https://drive.google.com/file/d/15xBn8aQmnlyYSioFDnKw6plf5iDBYFos/view?usp=sharing">
-      <img src="assets/invitro_bss_thumbnail.png" width="100%" alt="In vitro BSS Example">
-    </a>
-    <p>In vitro Neural Network Analysis (Paper 3)</p>
-  </div>
-</div>
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://drive.google.com/file/d/164bR0gO_1qHixJ96uNxvygY7JRdLH1XL/view?usp=sharing">
+        <img src="assets/bss_thumbnail.png" width="100%" alt="BSS Example">
+        <br><strong>BSS</strong>
+      </a>
+      <p>Blind Source Separation (Paper 1 & 3)</p>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://drive.google.com/file/d/12S1PHlCTLKTaf33YGWeTjbVxrRh5gWHz/view?usp=sharing">
+        <img src="assets/maze_thumbnail.png" width="100%" alt="Maze Example">
+        <br><strong>Maze</strong>
+      </a>
+      <p>Maze Navigation (Paper 2)</p>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://drive.google.com/file/d/15xBn8aQmnlyYSioFDnKw6plf5iDBYFos/view?usp=sharing">
+        <img src="assets/invitro_bss_thumbnail.png" width="100%" alt="In vitro BSS Example">
+        <br><strong>In vitro BSS</strong>
+      </a>
+      <p>In vitro Neural Network Analysis (Paper 3)</p>
+    </td>
+  </tr>
+</table>
 
 ## Installation
 It is recommended to use a virtual environment for installation. This project has been tested with Python 3.10.
