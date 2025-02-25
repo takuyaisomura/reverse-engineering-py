@@ -23,6 +23,32 @@ This repository is based on the following papers:
     Takuya Isomura, Kiyoshi Kotani, Yasuhiko Jimbo, Karl Friston
     Nature Communications 14, 4547 (2023). https://doi.org/10.1038/s41467-023-40141-z
 
+## Example Notebooks
+The following Colab notebooks provide explanations and usage examples:
+
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+  <div style="text-align: center; width: 30%;">
+    <a href="https://drive.google.com/file/d/164bR0gO_1qHixJ96uNxvygY7JRdLH1XL/view?usp=sharing">
+      <img src="assets/bss_thumbnail.png" width="100%" alt="BSS Example">
+    </a>
+    <p>Blind Source Separation (Paper 1 & 3)</p>
+  </div>
+  
+  <div style="text-align: center; width: 30%;">
+    <a href="https://drive.google.com/file/d/12S1PHlCTLKTaf33YGWeTjbVxrRh5gWHz/view?usp=sharing">
+      <img src="assets/maze_thumbnail.png" width="100%" alt="Maze Example">
+    </a>
+    <p>Maze Navigation (Paper 2)</p>
+  </div>
+  
+  <div style="text-align: center; width: 30%;">
+    <a href="https://drive.google.com/file/d/15xBn8aQmnlyYSioFDnKw6plf5iDBYFos/view?usp=sharing">
+      <img src="assets/invitro_bss_thumbnail.png" width="100%" alt="In vitro BSS Example">
+    </a>
+    <p>In vitro Neural Network Analysis (Paper 3)</p>
+  </div>
+</div>
+
 ## Installation
 It is recommended to use a virtual environment for installation. This project has been tested with Python 3.10.
 1. Create and activate a virtual environment
@@ -66,7 +92,7 @@ reverse_engineering/
 ```
 
 ### example/bss
-This example demonstrates blind source separation (BSS) by using the free-energy principle.  
+This example demonstrates blind source separation (BSS) by using the free-energy principle.
 The implementation is based on the [Paper 1](https://doi.org/10.1162/neco_a_01315) and [Paper 3](https://doi.org/10.1038/s41467-023-40141-z).
 ```bash
 python -m reverse_engineering.example.bss.main  # if you installed from PyPI
@@ -77,7 +103,7 @@ python reverse_engineering/example/bss/main.py  # if you installed in editable m
 <img src="reverse_engineering/example/bss/output/bss.png" height="300" alt="example bss output">
 
 ### example/maze
-This example demonstrates maze navigation by using the free-energy principle.  
+This example demonstrates maze navigation by using the free-energy principle.
 The implementation is based on the [Paper 2](https://doi.org/10.1038/s42003-021-02994-2).
 ```bash
 python -m reverse_engineering.example.maze.main  # if you installed from PyPI
@@ -88,7 +114,7 @@ python reverse_engineering/example/maze/main.py  # if you installed in editable 
 ![example maze output](reverse_engineering/example/maze/output/maze_sample1_trial100_E0.25.png)
 
 ### example/invitro_bss
-This example analyzes data from invitro neuronal networks performing blind source separation (BSS) using the reverse engineering approach.  
+This example analyzes data from invitro neuronal networks performing blind source separation (BSS) using the reverse engineering approach.
 The implementation is based on the [Paper 3](https://doi.org/10.1038/s41467-023-40141-z).
 ```bash
 python -m reverse_engineering.example.invitro_bss.main  # if you installed from PyPI
@@ -103,5 +129,5 @@ python reverse_engineering/example/invitro_bss/main.py  # if you installed in ed
 This project is covered under the **GNU General Public License v3.0**.
 
 ## Feedback and Contributing
-All feedback including questions, bug reports, and feature improvement suggestions are welcome through GitHub Issues.  
+All feedback including questions, bug reports, and feature improvement suggestions are welcome through GitHub Issues.
 Pull requests are also appreciated.
