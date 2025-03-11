@@ -1,7 +1,7 @@
 import numpy as np
 from numpy.testing import assert_allclose
 
-from reverse_engineering.example.bss.main import create_qa_init, generate, simulate
+from example.bss.main import create_qa_init, generate, simulate
 from reverse_engineering.pomdp import POMDP
 from reverse_engineering.utils.variable_conversion import POMDPVariables, nn2pomdp, pomdp2nn
 

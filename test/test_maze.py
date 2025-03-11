@@ -2,8 +2,8 @@ from pathlib import Path
 
 import numpy as np
 
-from reverse_engineering.example.maze.main import create_init_pomdp, main, run_trial
-from reverse_engineering.example.maze.utils import create_maze
+from example.maze.main import create_init_pomdp, main, run_trial
+from example.maze.utils import create_maze
 
 
 def test_maze_trial():
