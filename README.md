@@ -29,21 +29,21 @@ The following Colab notebooks provide explanations and usage examples:
 <table>
   <tr>
     <td align="center" width="33%">
-      <a href="https://drive.google.com/file/d/164bR0gO_1qHixJ96uNxvygY7JRdLH1XL/view?usp=sharing">
+      <a href="https://colab.research.google.com/drive/164bR0gO_1qHixJ96uNxvygY7JRdLH1XL">
         <img src="assets/bss_thumbnail.png" width="100%" alt="BSS Example">
         <br><strong>BSS</strong>
       </a>
       <p>Blind Source Separation (Paper 1 & 3)</p>
     </td>
     <td align="center" width="33%">
-      <a href="https://drive.google.com/file/d/12S1PHlCTLKTaf33YGWeTjbVxrRh5gWHz/view?usp=sharing">
+      <a href="https://colab.research.google.com/drive/12S1PHlCTLKTaf33YGWeTjbVxrRh5gWHz">
         <img src="assets/maze_thumbnail.png" width="100%" alt="Maze Example">
         <br><strong>Maze</strong>
       </a>
       <p>Maze Navigation (Paper 2)</p>
     </td>
     <td align="center" width="33%">
-      <a href="https://drive.google.com/file/d/15xBn8aQmnlyYSioFDnKw6plf5iDBYFos/view?usp=sharing">
+      <a href="https://colab.research.google.com/drive/15xBn8aQmnlyYSioFDnKw6plf5iDBYFos">
         <img src="assets/invitro_bss_thumbnail.png" width="100%" alt="In vitro BSS Example">
         <br><strong>In vitro BSS</strong>
       </a>
