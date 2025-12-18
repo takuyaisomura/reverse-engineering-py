@@ -2,8 +2,8 @@ from pathlib import Path
 
 import numpy as np
 
+from example.maze.env import create_maze
 from example.maze.main import create_init_pomdp, main, run_trial
-from example.maze.utils import create_maze
 
 
 def test_maze_trial():
